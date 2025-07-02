@@ -1,3 +1,0 @@
-Enter User ID (1-100),Number of Books to Recommend,Recommended Books,timestamp
-10,6,"{""headers"": [""1""], ""data"": [], ""metadata"": null}",2025-07-02 12:15:25.712690
-78,6,"{""headers"": [""1""], ""data"": [[""The Stand""], [""To Kill a Mockingbird""], [""A Tale of Two Cities""], [""1984""], [""Slaughterhouse-Five""], [""Think and Grow Rich""]], ""metadata"": null}",2025-07-02 12:51:06.060406
