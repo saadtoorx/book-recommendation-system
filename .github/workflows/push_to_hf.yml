@@ -22,4 +22,4 @@ jobs:
           git config --global user.email "you@example.com"
           git config --global user.name "Saad Toor"
           git remote add hf https://user:${HF_TOKEN}@huggingface.co/spaces/saadtoorx/book-recommendation-system
-          git push hf main
+          git push hf main --force
