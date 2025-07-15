@@ -1,25 +1,27 @@
-name: Sync to Hugging Face Space
+name: Deploy to Hugging Face Spaces
 
 on:
   push:
-    branches: [main]
-  workflow_dispatch:
+    branches:
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repo
+      - name: Checkout full repository history
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
-          lfs: true
+          fetch-depth: 0  # <-- Important to allow full git history
+
+      - name: Set up Git identity
+        run: |
+          git config --global user.email "saadtoorx@example.com"
+          git config --global user.name "saadtoorx"
 
       - name: Push to Hugging Face
-        env:
-          HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
-          git config --global user.email "you@example.com"
-          git config --global user.name "Saad Toor"
-          git remote add hf https://user:${HF_TOKEN}@huggingface.co/spaces/saadtoorx/book-recommendation-system
-          git push hf main --force
+          git remote remove hf || true
+          git remote add hf https://saadtoorx:${{ secrets.HF_TOKEN }}@huggingface.co/spaces/saadtoorx/book-recommendation-system
+          git push hf HEAD:main --force

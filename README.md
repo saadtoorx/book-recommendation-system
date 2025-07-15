@@ -38,7 +38,7 @@ The project also includes a **Gradio web interface** to make the recommendations
 ```
 book-recommendation-system/
 ├── app.py                     # Main Gradio app file (this one runs)
-├── notebook.ipynb             # Jupyter notebook version
+├── app.ipynb             # Jupyter notebook version
 ├── books_rating.csv           # Ratings dataset
 ├── images/
 │   ├── output1.png            # Example output screenshot
